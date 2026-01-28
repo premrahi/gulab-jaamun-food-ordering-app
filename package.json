@@ -1,0 +1,30 @@
+{
+  "name": "gulab-jaamun-food-ordering-app",
+  "version": "1.0.0",
+  "description": "food ordering app",
+  "keywords": [
+    "food"
+  ],
+  "homepage": "https://github.com/premrahi/gulab-jaamun-food-ordering-app#readme",
+  "bugs": {
+    "url": "https://github.com/premrahi/gulab-jaamun-food-ordering-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/premrahi/gulab-jaamun-food-ordering-app.git"
+  },
+  "license": "ISC",
+  "author": "prem",
+  "type": "commonjs",
+
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "parcel": "^2.16.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
