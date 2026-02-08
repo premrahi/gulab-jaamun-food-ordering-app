@@ -1,10 +1,10 @@
 import ResCard from "./RestaurantCard";
-import resList from "../utils/mockData";
+import { resList } from "../utils/mockData";
 import { useState } from "react";
 
 const Body = () => {
   // local state variable
-  const [listOfRestaurants, setlistOfRestaurants] = useState(resList);
+  const [listOfRestaurants, setListOfRestaurants] = useState(resList);
 
   // normal js variable
   // let listOfRestaurants = [] ;
@@ -25,9 +25,9 @@ const Body = () => {
             className="filter-btn"
             onClick={() => {
               const newListOfRestaurants = listOfRestaurants.filter(
-                (res) => (res = res.rating >= 4.3),
+                (res) => (res = res.info.avgRating >= 4.3),
               );
-              setlistOfRestaurants(newListOfRestaurants);
+              setListOfRestaurants(newListOfRestaurants);
             }}
           >
             {" "}
@@ -45,7 +45,7 @@ const Body = () => {
         <ResCard resData={resList[6]} /> */}
 
         {listOfRestaurants.map((rest) => {
-          return <ResCard key={rest.id} resData={rest} />;
+          return <ResCard key={rest.info.id} resData={rest} />;
         })}
       </div>
     </div>
