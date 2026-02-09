@@ -1,15 +1,42 @@
 import ResCard from "./RestaurantCard";
+import Shimmer from "./Shimmer.js";
 import { resList } from "../utils/mockData";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const Body = () => {
   // local state variable
-  const [listOfRestaurants, setListOfRestaurants] = useState(resList);
+  // const [listOfRestaurants, setListOfRestaurants] = useState(resList);  // this line here uses the dummy data
+
+  const [listOfRestaurants, setListOfRestaurants] = useState([]); // now we use api data
 
   // normal js variable
   // let listOfRestaurants = [] ;
 
-  return (
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://foodfire.onrender.com/api/restaurants?lat=28.60090200875999&lng=77.08098202943802&page_type=DESKTOP_WEB_LISTING",
+    );
+
+    const json = await data.json();
+
+    setListOfRestaurants(
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants,
+    );
+  };
+
+  // conditional rendering - rendering on the basis of condition
+  // if(listOfRestaurants.length === 0){
+  //   return <Shimmer/>
+  // }
+
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="search-container">
         <div className="search">
