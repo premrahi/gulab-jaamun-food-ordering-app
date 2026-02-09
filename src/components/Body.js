@@ -63,7 +63,7 @@ const Body = () => {
                 //to make it case insensitive we must convert both the text into lowercase
                 return  res.info.name.toLowerCase().includes(searchText.toLocaleLowerCase()) ;
               })
-              console.log(searchText);  
+              // console.log(searchText);  
               setFilterRestaurant(filteredRestaurants) ;
             }}
           >
@@ -74,7 +74,7 @@ const Body = () => {
 
 
         </div>
-        {console.log(listOfRestaurants)}
+        {/* {console.log(listOfRestaurants) this was just for checking */} 
         <div className="filter">
           <button
             className="filter-btn"
@@ -82,7 +82,7 @@ const Body = () => {
               const newListOfRestaurants = listOfRestaurants.filter(
                 (res) => (res = res.info.avgRating >= 4.3),
               );
-              setListOfRestaurants(newListOfRestaurants);
+              setFilterRestaurant(newListOfRestaurants);
             }}
           >
             {" "}
