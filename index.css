@@ -95,3 +95,10 @@
     background-color: #f0f0f0;
     margin: 20px;
 }
+.login{
+    padding: 0 20px;
+    margin-right: 20px ;
+    border : 2px solid black ;
+    border-radius: 9px;
+    font-size: 20px; 
+}
