@@ -9,6 +9,8 @@ const Body = () => {
   // const [listOfRestaurants, setListOfRestaurants] = useState(resList);  // this line here uses the dummy data
 
   const [listOfRestaurants, setListOfRestaurants] = useState([]); // now we use api data
+  const [filteredRestaurant , setFilterRestaurant] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   // normal js variable
   // let listOfRestaurants = [] ;
@@ -25,7 +27,11 @@ const Body = () => {
     const json = await data.json();
 
     setListOfRestaurants(
-      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants,
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+
+    setFilterRestaurant(
+      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -34,7 +40,7 @@ const Body = () => {
   //   return <Shimmer/>
   // }
 
-   return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -44,9 +50,31 @@ const Body = () => {
             className="search-bar"
             type="text"
             placeholder="what you want?"
-          ></input>
-          <button className="search-btn">search</button>
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+
+           <button
+            className="search-btn"
+            onClick={() => {
+              const filteredRestaurants = listOfRestaurants.filter((res) =>{
+                //to make it case insensitive we must convert both the text into lowercase
+                return  res.info.name.toLowerCase().includes(searchText.toLocaleLowerCase()) ;
+              })
+              console.log(searchText);  
+              setFilterRestaurant(filteredRestaurants) ;
+            }}
+          >
+            {" "}
+            search
+          </button>
+
+
+
         </div>
+        {console.log(listOfRestaurants)}
         <div className="filter">
           <button
             className="filter-btn"
@@ -71,7 +99,7 @@ const Body = () => {
         <ResCard resData={resList[5]} />
         <ResCard resData={resList[6]} /> */}
 
-        {listOfRestaurants.map((rest) => {
+        {filteredRestaurant.map((rest) => {
           return <ResCard key={rest.info.id} resData={rest} />;
         })}
       </div>
