@@ -3,13 +3,14 @@ import Shimmer from "./Shimmer.js";
 import { resList } from "../utils/mockData";
 import { useState } from "react";
 import { useEffect } from "react";
+import { FOODFIRE_API, Swiggy_api } from "../utils/constants.js";
 
 const Body = () => {
   // local state variable
   // const [listOfRestaurants, setListOfRestaurants] = useState(resList);  // this line here uses the dummy data
 
   const [listOfRestaurants, setListOfRestaurants] = useState([]); // now we use api data
-  const [filteredRestaurant , setFilterRestaurant] = useState([]);
+  const [filteredRestaurant, setFilterRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   // normal js variable
@@ -20,19 +21,24 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://foodfire.onrender.com/api/restaurants?lat=28.60090200875999&lng=77.08098202943802&page_type=DESKTOP_WEB_LISTING",
-    );
+    try {
+      const data = await fetch(
+        "https://corsproxy.io/?" + encodeURIComponent(FOODFIRE_API),
+      );
 
-    const json = await data.json();
+      const json = await data.json();
 
-    setListOfRestaurants(
-      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+      const restaurants =
+        json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
 
-    setFilterRestaurant(
-      json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+      if (restaurants) {
+        setListOfRestaurants(restaurants);
+        setFilterRestaurant(restaurants);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   // conditional rendering - rendering on the basis of condition
@@ -56,25 +62,24 @@ const Body = () => {
             }}
           />
 
-           <button
+          <button
             className="search-btn"
             onClick={() => {
-              const filteredRestaurants = listOfRestaurants.filter((res) =>{
+              const filteredRestaurants = listOfRestaurants.filter((res) => {
                 //to make it case insensitive we must convert both the text into lowercase
-                return  res.info.name.toLowerCase().includes(searchText.toLocaleLowerCase()) ;
-              })
-              // console.log(searchText);  
-              setFilterRestaurant(filteredRestaurants) ;
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLocaleLowerCase());
+              });
+              // console.log(searchText);
+              setFilterRestaurant(filteredRestaurants);
             }}
           >
             {" "}
             search
           </button>
-
-
-
         </div>
-        {/* {console.log(listOfRestaurants) this was just for checking */} 
+        {/* {console.log(listOfRestaurants)} */}
         <div className="filter">
           <button
             className="filter-btn"
