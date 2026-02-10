@@ -3,7 +3,9 @@ import Shimmer from "./Shimmer.js";
 import { resList } from "../utils/mockData";
 import { useState } from "react";
 import { useEffect } from "react";
-import { FOODFIRE_API, Swiggy_api } from "../utils/constants.js";
+import { FOODFIRE_API } from "../utils/constants.js";
+import { Link } from "react-router-dom" ;
+
 
 const Body = () => {
   // local state variable
@@ -105,7 +107,14 @@ const Body = () => {
         <ResCard resData={resList[6]} /> */}
 
         {filteredRestaurant.map((rest) => {
-          return <ResCard key={rest.info.id} resData={rest} />;
+          return (
+            <Link to={"/restaurants/" + rest.info.id} key={rest.info.id}>
+              <ResCard resData={rest} />{" "}
+            </Link>
+          );
+          {/* return (
+            <ResCard resData = {rest}  key={rest.info.id}/>
+          ) */}
         })}
       </div>
     </div>

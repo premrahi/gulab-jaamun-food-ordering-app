@@ -25,7 +25,7 @@ const ResCard = (props) => {
       <h3>{name}</h3>
       <p>{cuisines.join(", ")}</p>
       <h5>{avgRating}⭐ stars</h5>
-      <p>{deliveryTime}minutes</p>
+      {/* <p>{deliveryTime}minutes</p> */}
       <p>{areaName}</p>
       <h4>{costForTwo}</h4>
       <p>{resData.info.sla.slaString}</p>

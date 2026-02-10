@@ -24,6 +24,9 @@
     background-color:rgb(238, 165, 29) ;
     padding: 5px;
     margin: 5px ;
+    color :black ;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
 }
 
 .res-card:hover{
