@@ -38,8 +38,8 @@ const RestaurantMenu = () => {
   return (
     <div>
       <h1>{name}</h1>
-      <h3>{cuisines?.join(", ")} </h3>
-      <h3>{costForTwoMessage}</h3>
+      <h3>{cuisines?.join(", ")} - {costForTwoMessage}</h3>
+      <h2>MENU</h2>
 
       <ul>
         {menuItems?.map((item, index) => (

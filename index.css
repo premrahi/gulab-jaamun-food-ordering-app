@@ -21,12 +21,18 @@
 
 .res-card{
     width : 210px ;
-    background-color:rgb(238, 165, 29) ;
+    height : 580px;
+    background-color:rgb(212, 199, 174) ;
     padding: 5px;
     margin: 5px ;
     color :black ;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* text-decoration: none; */
+}
+
+.res-card a {
     text-decoration: none;
+    color: inherit;
 }
 
 .res-card:hover{
@@ -34,7 +40,7 @@
     /* width: 205px; */
     /* height: 305px ; */
     cursor: pointer;
-    background-color:rgb(215, 157, 21);
+    background-color:rgb(110, 110, 108);
 
 }
 .res-card > p {
@@ -116,4 +122,16 @@
 .error > h3 {
     color:green ;
     
+}
+
+.user-card {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.abt-btn{
+    padding: 10px;
+    margin : 20px;
+    border-radius: 10px;
+    background-color: burlywood;
 }
