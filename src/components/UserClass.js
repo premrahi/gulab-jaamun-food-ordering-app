@@ -1,19 +1,44 @@
 import React from "react";
 
 class UserClass extends React.Component {
+
   constructor(props) {
     super(props);
-    console.log(this.props);
+    // console.log(this.props);
 
     this.state = {
       count: 0,
       // count2 : 2 ,
+
+      userinfo:{
+        name : "prem rahi" ,
+        location : "US" 
+      }
     };
+
+    // console.log(this.props.name + "constructor rendered");
+  }
+
+
+  // main function of componentDidMount is to make Api calls
+
+  async componentDidMount() {
+    // console.log(this.props.name + "component did mounted");
+    const data = await fetch("https://api.github.com/users/premrahi") ;
+    const json = await data.json() ;
+
+    console.log(json);
+
+    this.setState({
+      userinfo : json 
+    })
   }
 
   render() {
-    const { name, location } = this.props;
-    const { count } = this.state;
+    // const { name, location } = this.props;
+    const { name,location,avatar_url } = this.state.userinfo;
+    // debugger ;
+    // console.log( this.props.name + "render rendered");
 
     return (
       <div className="user-card">
@@ -22,7 +47,7 @@ class UserClass extends React.Component {
           className="abt-btn"
           onClick={() => {
             this.setState({
-              // NEVER UPDATE STATE VARIABLE DIRECTLY 
+              // NEVER UPDATE STATE VARIABLE DIRECTLY
               count: this.state.count + 1,
             });
           }}
@@ -41,7 +66,9 @@ class UserClass extends React.Component {
         </button>
 
         <h1>Name : {name}</h1>
-        <h1>count : {count}</h1>
+        <img src={avatar_url}></img>
+        
+        <h1>count : {this.state.count}</h1>
 
         {/* <h1>count2 : {count2}</h1> */}
 

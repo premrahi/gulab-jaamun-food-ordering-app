@@ -34,5 +34,71 @@ import { Component } from "Path"
 - useState() - superpowerfull state variable
 - useEffect()
 
-      "https://foodfire.onrender.com/api/restaurants?lat=28.60090200875999&lng=77.08098202943802&page_type=DESKTOP_WEB_LISTING",
-foodfire api = 
+
+
+- conditional rendering
+- optional chaining
+- useState ~ whenever state variable updates, react triggers a reconciliation cycle(re-renders the component)
+- useEffect
+
+
+---- installed react-router-dom ---------------
+- createbrowserrouter
+- routerprovider
+- useRouteError  - give more info about err, it a part of react-router-dom
+- children and outlet
+- never use an anchor tag in react app because it refresh the whole page
+- use { link } from react-router-dom (replacement of a tag)
+
+-difference between anchor tag and Link
+<a href="/about">about us</a> - anchor tag `refreshes the whole page`
+<Link to="/about">about us</Link> - Link tag `it refreshes the components`
+
+- single page application
+
+there are two types of routing in web apps-
+1 client side routing
+2 server side routing
+
+
+- there are 2 types of components
+1. function component - just a simple function returning JSX code
+2. Classbased component - class name extends React.component{
+render(){
+}
+}
+
+way to use props and state in classbased components
+constructor(props) {
+    super(props); // very imp
+    console.log(this.props);
+
+    this.state = {
+      count: 0,
+      // count2 : 2 ,
+    };
+  }
+
+
+way to update state variable in class based component
+<button
+   className="abt-btn"
+     onClick= { () => {
+	this.setState({
+        // NEVER UPDATE STATE VARIABLE DIRECTLY 
+        	count: this.state.count + 1,
+          });
+       }} ;
+   >
+    Increase counter
+</button>
+
+
+if we talk about life cycle of a component
+1st the constructor is mounted
+then the render() is mounted
+then componentDidMount()
+
+
+- in classbased component componentDidMount() is used to make API calls
+- in function based component we make api calls inside useEffect having an empty dependency array which means it will make API call only once 
