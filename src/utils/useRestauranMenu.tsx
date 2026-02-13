@@ -2,13 +2,13 @@ import { FOODFIRE_MENU_API } from "./constants";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const useRestaurantMenu = (resId) =>{
+const useRestaurantMenu = (resId? : string ) =>{
 
-    const [resInfo ,setResInfo] = useState(null) ;
+    const [resInfo ,setResInfo] = useState<any>(null) ;
     // fetchData
     useEffect (()=>{
         fetchData() ;
-    },[]);
+    },[resId]);
 
     const fetchData = async () =>{
         const data = await fetch(FOODFIRE_MENU_API + resId) ;

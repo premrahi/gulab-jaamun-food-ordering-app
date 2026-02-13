@@ -2,6 +2,7 @@ import React from "react";
 
 interface UserProps {
   name ? :string ;
+  location? : string; 
 }
 
 interface Info {

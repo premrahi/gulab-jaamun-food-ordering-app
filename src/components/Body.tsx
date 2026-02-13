@@ -1,19 +1,33 @@
 import ResCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { resList } from "../utils/mockData";
+// import { resList } from "../utils/mockData";
 import { useState } from "react";
 import { useEffect } from "react";
-import { FOODFIRE_API } from "../utils/constants.js";
-import { Link } from "react-router-dom" ;
+import { FOODFIRE_API } from "../utils/constants";
+import { Link } from "react-router-dom";
 
+interface Restaurant {
+  info: {
+    id: string;
+    cloudinaryImageId: string;
+    name: string;
+    avgRating: number;
+    cuisines: string[];
+    areaName: string;
+    costForTwo: string;
+    sla: {
+      slaString: string;
+    };
+  };
+}
 
 const Body = () => {
   // local state variable
   // const [listOfRestaurants, setListOfRestaurants] = useState(resList);  // this line here uses the dummy data
 
-  const [listOfRestaurants, setListOfRestaurants] = useState([]); // now we use api data
-  const [filteredRestaurant, setFilterRestaurant] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const [listOfRestaurants, setListOfRestaurants] = useState<Restaurant[]>([]); // now we use api data
+  const [filteredRestaurant, setFilterRestaurant] = useState<Restaurant[]>([]);
+  const [searchText, setSearchText] = useState<string>("");
 
   // normal js variable
   // let listOfRestaurants = [] ;
@@ -22,7 +36,7 @@ const Body = () => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
+  const fetchData = async (): Promise<void> => {
     try {
       const data = await fetch(
         "https://corsproxy.io/?" + encodeURIComponent(FOODFIRE_API),
@@ -30,9 +44,9 @@ const Body = () => {
 
       const json = await data.json();
 
-      const restaurants =
+      const restaurants:Restaurant[] =
         json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
+          ?.restaurants  || [];
 
       if (restaurants) {
         setListOfRestaurants(restaurants);
@@ -87,7 +101,7 @@ const Body = () => {
             className="filter-btn"
             onClick={() => {
               const newListOfRestaurants = listOfRestaurants.filter(
-                (res) => (res = res.info.avgRating >= 4.3),
+                (res) => res.info.avgRating >= 4.3
               );
               setFilterRestaurant(newListOfRestaurants);
             }}
@@ -112,9 +126,11 @@ const Body = () => {
               <ResCard resData={rest} />{" "}
             </Link>
           );
-          {/* return (
+          {
+            /* return (
             <ResCard resData = {rest}  key={rest.info.id}/>
-          ) */}
+          ) */
+          }
         })}
       </div>
     </div>

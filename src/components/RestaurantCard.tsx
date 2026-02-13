@@ -1,19 +1,33 @@
 import { CDN_URL } from "../utils/constants";
 
-const ResCard = (props) => {
+interface ResCardProps {
+  resData: {
+    info: {
+      id: string;
+      cloudinaryImageId: string;
+      name: string;
+      avgRating: number;
+      cuisines: string[];
+      areaName: string;
+      costForTwo: string;
+      sla: {
+        slaString: string;
+      };
+    };
+  };
+}
+
+const ResCard = (props: ResCardProps) => {
   const { resData } = props;
 
-
   const {
-    cloudinaryImageId ,
-    name ,
+    cloudinaryImageId,
+    name,
     avgRating,
     cuisines,
-    deliveryTime,
     areaName,
     costForTwo,
-    
-  } = resData?.info ;
+  } = resData?.info;
 
   return (
     <div className="res-card">

@@ -1,4 +1,4 @@
-export const resList = [
+export const resList:object = [
   {
     info: {
       id: "188433",

@@ -17,13 +17,16 @@ import React from "react";
 //   );
 // };
 
-class About extends React.Component {
-  constructor(props) {
+interface AboutProps {} ;
+interface AboutState {} ;
+
+class About extends React.Component <AboutProps ,AboutState>{
+  constructor(props:AboutProps) {
     super(props);
     // console.log("parent constructor rendered");
   }
 
-  componentDidMount() {
+  componentDidMount(){
     // console.log("parent did mount");
   }
 
