@@ -1,24 +1,32 @@
 import { useState } from "react";
 
-const User = ({ name }) => {
-  const [count, setCount] = useState(0);
+interface userProps {
+  name : string ;
+}
+
+const User = ({ name }: userProps) => {
+  const [count, setCount] = useState<number>(0);
 //   const [count2, setCount2] = useState(2);
+
+
+const handleIncrease = ()=>{
+    setCount((p) => p+1) ;
+}
+const handleDecrease = ()=>{
+    setCount((p) => p-1) ;
+}
 
   return (
     <div className="user-card">
       <button
         className="abt-btn"
-        onClick={() => {
-          setCount(count + 1);
-        }}
+        onClick={handleIncrease}
       >
         increase counter 
       </button>
       <button
         className="abt-btn"
-        onClick={() => {
-          setCount(count - 1);
-        }}
+        onClick={handleDecrease}
       >
         Decrease counter 
       </button>

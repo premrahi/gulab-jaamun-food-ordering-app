@@ -1,24 +1,27 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { FOODFIRE_MENU_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import useRestaurantMenu from "../utils/useRestauranMenu";
+import { useEffect } from "react";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
+  // const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, [resId]); // it has empty dependency array this means it will be called once after initial rendering
 
-  const fetchMenu = async () => {
-    const data = await fetch(FOODFIRE_MENU_API + resId);
+  const resInfo = useRestaurantMenu(resId) ; 
 
-    const json = await data.json();
+  // useEffect(() => {
+  //   fetchMenu();
+  // }, [resId]); // it has empty dependency array this means it will be called once after initial rendering
 
-    setResInfo(json?.data);
-    console.log("API URL => ", FOODFIRE_MENU_API + resId);
-  };
+  // const fetchMenu = async () => {
+  //   const data = await fetch(FOODFIRE_MENU_API + resId);
+
+  //   const json = await data.json();
+
+  //   setResInfo(json?.data);
+  //   console.log("API URL => ", FOODFIRE_MENU_API + resId);
+  // };
 
   if (resInfo === null) return <Shimmer />;
 

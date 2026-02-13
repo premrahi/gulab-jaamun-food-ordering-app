@@ -1,8 +1,24 @@
 import React from "react";
 
-class UserClass extends React.Component {
+interface UserProps {
+  name ? :string ;
+}
 
-  constructor(props) {
+interface Info {
+  name : string; 
+  location : string ;
+  avatar_url ?  : string; // question mark makes it optional
+}
+
+interface UserState {
+  count: number ;
+  userinfo : Info ;
+}
+
+
+class UserClass extends React.Component<UserProps ,UserState> {
+
+  constructor(props : UserProps) {
     super(props);
     // console.log(this.props);
 
@@ -12,7 +28,7 @@ class UserClass extends React.Component {
 
       userinfo:{
         name : "prem rahi" ,
-        location : "US" 
+        location : "US" ,
       }
     };
 
@@ -22,24 +38,22 @@ class UserClass extends React.Component {
 
   // main function of componentDidMount is to make Api calls
 
-  async componentDidMount() {
+  async componentDidMount(): Promise<void>{
     // console.log(this.props.name + "component did mounted");
     const data = await fetch("https://api.github.com/users/premrahi") ;
-    const json = await data.json() ;
+    const json:Info = await data.json() ;
 
     console.log(json);
 
     this.setState({
-      userinfo : json 
-    })
+      userinfo : json , 
+    }) ;
   }
 
   render() {
-    // const { name, location } = this.props;
-    const { name,location,avatar_url } = this.state.userinfo;
-    // debugger ;
-    // console.log( this.props.name + "render rendered");
 
+    const { name,location,avatar_url } = this.state.userinfo;
+    
     return (
       <div className="user-card">
         {/* ways to update state variable */}
@@ -66,11 +80,9 @@ class UserClass extends React.Component {
         </button>
 
         <h1>Name : {name}</h1>
-        <img src={avatar_url}></img>
+        {avatar_url && <img src={avatar_url} alt="User Avatar"></img>}
         
         <h1>count : {this.state.count}</h1>
-
-        {/* <h1>count2 : {count2}</h1> */}
 
         <h2>also known as gulab jaamun gol wala</h2>
         <h4>location : {location}</h4>

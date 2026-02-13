@@ -69,6 +69,7 @@ render(){
 }
 
 way to use props and state in classbased components
+
 constructor(props) {
     super(props); // very imp
     console.log(this.props);
@@ -76,11 +77,12 @@ constructor(props) {
     this.state = {
       count: 0,
       // count2 : 2 ,
-    };
-  }
+   };
+}
 
 
 way to update state variable in class based component
+
 <button
    className="abt-btn"
      onClick= { () => {
