@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { FOODFIRE_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/onlineStatus";
 
 interface Restaurant {
   info: {
@@ -61,6 +62,16 @@ const Body = () => {
   // if(listOfRestaurants.length === 0){
   //   return <Shimmer/>
   // }
+
+  const onlineStatus:boolean = useOnlineStatus() ;
+
+  if(onlineStatus === false){
+    return <div className="off-div">
+      <h1>
+        please check your internet connection !!!
+      </h1>
+    </div>
+  }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />

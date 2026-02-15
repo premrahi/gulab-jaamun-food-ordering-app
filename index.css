@@ -135,3 +135,13 @@
     border-radius: 10px;
     background-color: burlywood;
 }
+
+.off-div{
+    margin-top: 50px;
+    align-items: center;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(88, 214, 88);
+}
+
