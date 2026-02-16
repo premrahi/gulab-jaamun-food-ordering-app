@@ -56,10 +56,10 @@ class UserClass extends React.Component<UserProps ,UserState> {
     const { name,location,avatar_url } = this.state.userinfo;
     
     return (
-      <div className="user-card">
+      <div className="font-medium border-2 m-4 p-4 rounded-2xl">
         {/* ways to update state variable */}
         <button
-          className="abt-btn"
+          className="m-4 p-4 text-blue-950 bg-amber-200 rounded-xl"
           onClick={() => {
             this.setState({
               // NEVER UPDATE STATE VARIABLE DIRECTLY
@@ -70,7 +70,7 @@ class UserClass extends React.Component<UserProps ,UserState> {
           Increase counter
         </button>
         <button
-          className="abt-btn"
+          className="m-4 p-4 text-blue-950 bg-amber-200 rounded-xl"
           onClick={() => {
             this.setState({
               count: this.state.count - 1,
@@ -83,10 +83,10 @@ class UserClass extends React.Component<UserProps ,UserState> {
         <h1>Name : {name}</h1>
         {avatar_url && <img src={avatar_url} alt="User Avatar"></img>}
         
-        <h1>count : {this.state.count}</h1>
+        <h1 className="italic text-2xl">Count : {this.state.count}</h1>
 
         <h2>also known as gulab jaamun gol wala</h2>
-        <h4>location : {location}</h4>
+        <h4>Location : {location}</h4>
       </div>
     );
   }

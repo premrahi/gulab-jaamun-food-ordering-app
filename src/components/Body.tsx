@@ -45,9 +45,9 @@ const Body = () => {
 
       const json = await data.json();
 
-      const restaurants:Restaurant[] =
+      const restaurants: Restaurant[] =
         json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants  || [];
+          ?.restaurants || [];
 
       if (restaurants) {
         setListOfRestaurants(restaurants);
@@ -63,24 +63,24 @@ const Body = () => {
   //   return <Shimmer/>
   // }
 
-  const onlineStatus:boolean = useOnlineStatus() ;
+  const onlineStatus: boolean = useOnlineStatus();
 
-  if(onlineStatus === false){
-    return <div className="off-div">
-      <h1>
-        please check your internet connection !!!
-      </h1>
-    </div>
+  if (onlineStatus === false) {
+    return (
+      <div className="off-div">
+        <h1>please check your internet connection !!!</h1>
+      </div>
+    );
   }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="search-container">
-        <div className="search">
+      <div className="mx-10 p-2">
+        <div className="p-4 mx-10">
           <input
-            className="search-bar"
+            className="p-4 border-2 rounded-xl "
             type="text"
             placeholder="what you want?"
             value={searchText}
@@ -90,7 +90,7 @@ const Body = () => {
           />
 
           <button
-            className="search-btn"
+            className="mx-4 p-4 rounded-lg text-white bg-orange-500"
             onClick={() => {
               const filteredRestaurants = listOfRestaurants.filter((res) => {
                 //to make it case insensitive we must convert both the text into lowercase
@@ -105,14 +105,14 @@ const Body = () => {
             {" "}
             search
           </button>
-        </div>
-        {/* {console.log(listOfRestaurants)} */}
-        <div className="filter">
+
+          {/* {console.log(listOfRestaurants)} */}
+
           <button
-            className="filter-btn"
+            className="mx-24 p-4 rounded-lg text-white bg-green-800"
             onClick={() => {
               const newListOfRestaurants = listOfRestaurants.filter(
-                (res) => res.info.avgRating >= 4.3
+                (res) => res.info.avgRating >= 4.3,
               );
               setFilterRestaurant(newListOfRestaurants);
             }}
@@ -122,7 +122,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap ">
         {/* <ResCard resData={resList[0]} />
         <ResCard resData={resList[1]} />
         <ResCard resData={resList[2]} />

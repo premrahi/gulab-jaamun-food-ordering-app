@@ -1,5 +1,7 @@
 export const logo_url:string = "https://www.kindpng.com/picc/m/201-2011704_restaurant-jd-sports-logo-png-transparent-png.png" ;
 
+
+
 export const CDN_URL:string = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" ;
 
 export const FOODFIRE_MENU_API:string = "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId="

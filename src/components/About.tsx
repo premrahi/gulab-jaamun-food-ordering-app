@@ -35,7 +35,7 @@ class About extends React.Component <AboutProps ,AboutState>{
 
     return (
       <>
-        <div>
+        <div className="font-bold text-center m-4 p-4">
           <h1>About us page</h1>
           <p>this is namaste react web series</p>
         </div>

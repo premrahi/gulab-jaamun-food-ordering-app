@@ -17,24 +17,24 @@ const handleDecrease = ()=>{
 }
 
   return (
-    <div className="user-card">
+    <div className="border-2 m-4 p-4 rounded-2xl font-medium">
       <button
-        className="abt-btn"
+        className="m-4 p-4 text-blue-950 bg-amber-200 rounded-xl"
         onClick={handleIncrease}
       >
         increase counter 
       </button>
       <button
-        className="abt-btn"
+        className="m-4 p-4 text-blue-950 bg-amber-200 rounded-xl"
         onClick={handleDecrease}
       >
         Decrease counter 
       </button>
-      <h1>count : {count}</h1>
+      <h1 className="text-xl italic">Count : {count}</h1>
       {/* <h1>count2 : {count2}</h1> */}
       <h1>Name : {name} </h1>
       <h2>also known as gulab jaamun lambe wala</h2>
-      <h4>location : australia </h4>
+      <h4>Location : australia </h4>
     </div>
   );
 };

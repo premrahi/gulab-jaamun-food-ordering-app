@@ -1,4 +1,8 @@
-.header{
+@import "tailwindcss";
+
+
+
+/* .header{
     display: flex;
     justify-content: space-between;
     border: 1px solid black ;
@@ -27,7 +31,7 @@
     margin: 5px ;
     color :black ;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    /* text-decoration: none; */
+    // text-decoration: none; 
 }
 
 .res-card a {
@@ -37,8 +41,8 @@
 
 .res-card:hover{
     border: 1px solid black;
-    /* width: 205px; */
-    /* height: 305px ; */
+    // width: 205px; 
+    //height: 305px ;
     cursor: pointer;
     background-color:rgb(110, 110, 108);
 
@@ -46,7 +50,7 @@
 .res-card > p {
     font-size: 17px;
     margin-left: 2px;
-    /* padding: 4px; */
+    // padding: 4px; 
 }
 .res-card > h5{
     background-color: rgb(26, 187, 11);
@@ -144,4 +148,4 @@
     border-radius: 10px;
     background-color: rgb(88, 214, 88);
 }
-
+ */
