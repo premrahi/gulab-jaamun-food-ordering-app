@@ -104,3 +104,10 @@ then componentDidMount()
 
 - in classbased component componentDidMount() is used to make API calls
 - in function based component we make api calls inside useEffect having an empty dependency array which means it will make API call only once 
+
+
+- Lazy loading → Loads something only when it’s needed. also know as on Demand loading
+
+- Code splitting / chunking → Breaks code into smaller files (chunks).
+
+- Dynamic loading (dynamic import) → A method used to implement lazy loading.
