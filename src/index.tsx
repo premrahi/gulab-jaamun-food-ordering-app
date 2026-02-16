@@ -1,16 +1,26 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./components/Body";
 import Header from "./components/Header";
-import About from "./components/About";
+// import About from "./components/About";
 import ErrorHandler from "./components/Error";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Grocery from "./components/Grocery";
+// import Grocery from "./components/Grocery"; // this was the traditional way of importing the grocery component
 
-// not using keys (not acceptable)
-// using index as keys is not recommended
+//lazy method
+//chunking
+//code splitting
+//Dynamic coding
+//Dynamic import
+//on demand loading
+
+const Grocery = lazy(() => import("./components/Grocery"));
+
+const About = lazy(() => import("./components/About"));
+
+
 
 const AppLayout = () => {
   return (
@@ -33,7 +43,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
@@ -45,7 +59,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/Grocery",
-        element: <Grocery />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <ErrorHandler />,
