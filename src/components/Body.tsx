@@ -80,7 +80,7 @@ const Body = () => {
       <div className="mx-10 p-2">
         <div className="p-4 mx-10">
           <input
-            className="p-4 border-1 rounded-xl "
+            className="p-4 border-2 rounded-xl "
             type="text"
             placeholder="what you want?"
             value={searchText}
