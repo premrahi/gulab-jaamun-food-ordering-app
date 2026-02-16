@@ -30,19 +30,19 @@ const ResCard = (props: ResCardProps) => {
   } = resData?.info;
 
   return (
-    <div className="res-card">
+    <div className="w-55 m-4 p-4 bg-yellow-100 rounded-xl hover:bg-amber-200 ">
       <img
-        className="res-logo"
+        className="rounded-xl "
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h3>{name}</h3>
-      <p>{cuisines.join(", ")}</p>
-      <h5>{avgRating}⭐ stars</h5>
+      <h3 className="font-medium mt-3 py-3 text-lg  ">{name}</h3>
+      <p className="p-1">{cuisines.join(", ")}</p>
+      <h5  className="p-1">{avgRating}⭐ stars</h5>
       {/* <p>{deliveryTime}minutes</p> */}
-      <p>{areaName}</p>
-      <h4>{costForTwo}</h4>
-      <p>{resData.info.sla.slaString}</p>
+      <p className="p-1">{areaName}</p>
+      <h4 className="p-1">{costForTwo}</h4>
+      <p className="p-1">{resData.info.sla.slaString}</p>
     </div>
   );
 };
