@@ -31,14 +31,14 @@ const RestaurantMenu = () => {
 
   const { name, cuisines, costForTwoMessage } = restaurantInfo || {};
 
-  console.log(regularCards) ;     
+  // console.log(regularCards) ;     
 
 
   const categories:[] = regularCards?.filter( (c:any)=>
     c.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" 
   ) 
 
-  console.log(categories) ;
+  // console.log(categories) ;
 
   return (
     <div className="text-center">
@@ -50,13 +50,7 @@ const RestaurantMenu = () => {
       {categories.map((category:any,index:number)=>
         <RestaurantCategory key={index} data={category?.card?.card} />
       )}
-      
-      
-      
-      
-      
-      
-      
+  
       
       {/* <h2>MENU</h2>
 
