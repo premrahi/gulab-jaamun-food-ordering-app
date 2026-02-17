@@ -49,7 +49,7 @@ const Body = () => {
       const json = await data.json();
 
       const restaurants: Restaurant[] =
-        json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || [];
 
       if (restaurants) {

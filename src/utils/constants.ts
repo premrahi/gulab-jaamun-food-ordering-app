@@ -6,6 +6,6 @@ export const FOODFIRE_MENU_API:string = "https://foodfire.onrender.com/api/menu?
 
 export const Swiggy_api:string = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6917476&lng=77.3296634&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 
-export const FOODFIRE_API:string =  "https://foodfire.onrender.com/api/restaurants?lat=28.60090200875999&lng=77.08098202943802&page_type=DESKTOP_WEB_LISTING"
+export const FOODFIRE_API:string =  "https://foodfire.onrender.com/api/restaurants?lat=19.0760&lng=72.8777&page_type=DESKTOP_WEB_LISTING"
 
 export const SWIGGY_MENU_API:string = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.6917476&lng=77.3296634&restaurantId=1155521&catalog_qa=undefined&submitAction=ENTER" ;

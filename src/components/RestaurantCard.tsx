@@ -30,7 +30,7 @@ const ResCard = (props: ResCardProps) => {
   } = resData?.info;
 
   return (
-    <div className="w-55 m-4 p-4 bg-yellow-100 rounded-xl hover:bg-amber-200 ">
+    <div className="w-55 m-4 p-4 bg-yellow-100 rounded-xl hover:bg-amber-200 overflow-hidden hover:scale-105 transition-transform duration-300">
       <img
         className="rounded-xl "
         alt="res-logo"
