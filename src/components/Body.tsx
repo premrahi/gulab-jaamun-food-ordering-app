@@ -1,4 +1,4 @@
-import ResCard from "./RestaurantCard";
+import ResCard , { OpenOrNot } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 // import { resList } from "../utils/mockData";
 import { useState } from "react";
@@ -9,6 +9,7 @@ import useOnlineStatus from "../utils/onlineStatus";
 
 interface Restaurant {
   info: {
+    isOpen : boolean
     id: string;
     cloudinaryImageId: string;
     name: string;
@@ -29,6 +30,8 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState<Restaurant[]>([]); // now we use api data
   const [filteredRestaurant, setFilterRestaurant] = useState<Restaurant[]>([]);
   const [searchText, setSearchText] = useState<string>("");
+
+  const OpenRes = OpenOrNot(ResCard) ;
 
   // normal js variable
   // let listOfRestaurants = [] ;
@@ -73,12 +76,13 @@ const Body = () => {
     );
   }
 
+  // console.log(listOfRestaurants)
+
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="mx-10 p-2">
-        <div className="p-4 mx-10">
+        <div className="p-4 mx-14">
           <input
             className="p-4 border-2 rounded-xl "
             type="text"
@@ -90,7 +94,7 @@ const Body = () => {
           />
 
           <button
-            className="mx-4 p-4 rounded-lg text-white bg-orange-500"
+            className="mx-4 p-4 rounded-lg text-white bg-orange-500 hover:cursor-pointer"
             onClick={() => {
               const filteredRestaurants = listOfRestaurants.filter((res) => {
                 //to make it case insensitive we must convert both the text into lowercase
@@ -106,10 +110,8 @@ const Body = () => {
             search
           </button>
 
-          {/* {console.log(listOfRestaurants)} */}
-
           <button
-            className="mx-24 p-4 rounded-lg text-white bg-green-800"
+            className="mx-24 p-4 rounded-lg text-white bg-green-800 hover:cursor-pointer"
             onClick={() => {
               const newListOfRestaurants = listOfRestaurants.filter(
                 (res) => res.info.avgRating >= 4.3,
@@ -121,7 +123,6 @@ const Body = () => {
             Top rated Restaurant
           </button>
         </div>
-      </div>
       <div className="flex flex-wrap ">
         {/* <ResCard resData={resList[0]} />
         <ResCard resData={resList[1]} />
@@ -134,7 +135,7 @@ const Body = () => {
         {filteredRestaurant.map((rest) => {
           return (
             <Link to={"/restaurants/" + rest.info.id} key={rest.info.id}>
-              <ResCard resData={rest} />{" "}
+             { rest.info.isOpen ? <OpenRes resData={rest}/> :  <ResCard resData={rest}/> }
             </Link>
           );
           {

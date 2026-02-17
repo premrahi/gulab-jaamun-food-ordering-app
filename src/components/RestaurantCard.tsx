@@ -46,4 +46,21 @@ const ResCard = (props: ResCardProps) => {
     </div>
   );
 };
+
+
+// higher order component
+// takes a component as input and enhances it
+
+export const OpenOrNot = (ResCard : any )=>{
+  return (props : ResCardProps)=>{
+    return(
+      <div>
+        <label className="absolute mx-2 p-3 bg-gray-800 text-white rounded-xl">Open</label>
+        <ResCard {...props} />
+        
+      </div>
+    )
+  }
+}
+
 export default ResCard;
