@@ -46,11 +46,6 @@ class About extends React.Component <AboutProps ,AboutState>{
           name={"Prem rahi (classbased component)"}
           location={"paxstan"}
         />
-        <br></br>
-        {/* <UserClass
-          name={"aalu paratha (classbased component)"}
-          location={"kadhai"}
-        /> */}
       </>
     );
   }

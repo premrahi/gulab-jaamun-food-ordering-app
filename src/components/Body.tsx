@@ -5,7 +5,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { FOODFIRE_API } from "../utils/constants";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/onlineStatus";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import OfflinePage from "./OfflinePage";
 
 interface Restaurant {
   info: {
@@ -76,12 +77,8 @@ const Body = () => {
 
   const onlineStatus: boolean = useOnlineStatus();
 
-  if (onlineStatus === false) {
-    return (
-      <div className="off-div">
-        <h1>please check your internet connection !!!</h1>
-      </div>
-    );
+  if(onlineStatus === false) {
+    return <OfflinePage />
   }
 
   // console.log(listOfRestaurants)
