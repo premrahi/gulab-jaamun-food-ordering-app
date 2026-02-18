@@ -1,25 +1,24 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
 
 interface UserProps {
-  name ? :string ;
-  location? : string; 
+  name?: string;
+  location?: string;
 }
 
 interface Info {
-  name : string; 
-  location : string ;
-  avatar_url ?  : string; // question mark makes it optional
+  name: string;
+  location: string;
+  avatar_url?: string; // question mark makes it optional
 }
 
 interface UserState {
-  count: number ;
-  userinfo : Info ;
+  count: number;
+  userinfo: Info;
 }
 
-
-class UserClass extends React.Component<UserProps ,UserState> {
-
-  constructor(props : UserProps) {
+class UserClass extends React.Component<UserProps, UserState> {
+  constructor(props: UserProps) {
     super(props);
     // console.log(this.props);
 
@@ -27,34 +26,32 @@ class UserClass extends React.Component<UserProps ,UserState> {
       count: 0,
       // count2 : 2 ,
 
-      userinfo:{
-        name : "prem rahi" ,
-        location : "US" ,
-      }
+      userinfo: {
+        name: "prem rahi",
+        location: "US",
+      },
     };
 
     // console.log(this.props.name + "constructor rendered");
   }
 
-
   // main function of componentDidMount is to make Api calls
 
-  async componentDidMount(): Promise<void>{
+  async componentDidMount(): Promise<void> {
     // console.log(this.props.name + "component did mounted");
-    const data = await fetch("https://api.github.com/users/premrahi") ;
-    const json:Info = await data.json() ;
+    const data = await fetch("https://api.github.com/users/premrahi");
+    const json: Info = await data.json();
 
     console.log(json);
 
     this.setState({
-      userinfo : json , 
-    }) ;
+      userinfo: json,
+    });
   }
 
   render() {
+    const { name, location, avatar_url } = this.state.userinfo;
 
-    const { name,location,avatar_url } = this.state.userinfo;
-    
     return (
       <div className="font-medium border-2 m-4 p-4 rounded-2xl">
         {/* ways to update state variable */}
@@ -79,10 +76,14 @@ class UserClass extends React.Component<UserProps ,UserState> {
         >
           Decrease counter
         </button>
-
-        <h1>Name : {name}</h1>
+        <div>
+          Name :
+          <UserContext.Consumer>
+            {({ loggedInUser }) => <h1>{loggedInUser}</h1>}
+          </UserContext.Consumer>
+        </div>
         {avatar_url && <img src={avatar_url} alt="User Avatar"></img>}
-        
+
         <h1 className="italic text-2xl">Count : {this.state.count}</h1>
 
         <h2>also known as gulab jaamun gol wala</h2>

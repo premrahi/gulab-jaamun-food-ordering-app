@@ -8,6 +8,9 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocery from "./components/Grocery"; // this was the traditional way of importing the grocery component
+import UserContext from "./utils/UserContext";
+import { useState,useEffect } from "react";
+
 
 //lazy method
 //chunking
@@ -17,18 +20,32 @@ import RestaurantMenu from "./components/RestaurantMenu";
 //on demand loading
 
 const Grocery = lazy(() => import("./components/Grocery"));
-
 const About = lazy(() => import("./components/About"));
 
-
-
 const AppLayout = () => {
+
+  //authentication
+  const[userName , setUserName] = useState<string>("") ;
+
+  useEffect(()=>{
+    // make an api call and send username and password.
+    const data = {
+      userName:"Prem Rahi" ,
+    };
+    setUserName(data.userName);
+  },[]) ;
+
+
+
+
   return (
+    <UserContext.Provider value={{loggedInUser : userName}}>
     <div className="app">
       {/* //header //body //footer */}
       <Header />
       <Outlet />
     </div>
+    </UserContext.Provider>
   );
 };
 

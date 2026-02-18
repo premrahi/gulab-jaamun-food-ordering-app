@@ -111,3 +111,9 @@ then componentDidMount()
 - Code splitting / chunking → Breaks code into smaller files (chunks).
 
 - Dynamic loading (dynamic import) → A method used to implement lazy loading.
+
+<h1>we can use reactContext by two ways</h1>
+1. by help of hooks useContext (for functional components) eg- in header file
+2. .consumer method  (for class based component) eg - in userClass file
+
+- to edit context all over the project we use .provider method in main file. eg- index.tsx file

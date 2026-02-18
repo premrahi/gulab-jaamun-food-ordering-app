@@ -1,5 +1,4 @@
 import ItemList from "./ItemList";
-import { useState } from "react";
 
 
 interface restaurantCategoryProps {
@@ -9,14 +8,12 @@ interface restaurantCategoryProps {
 }
 
 
-const RestaurantCategory = ({ data ,showItem ,setShowItem}: restaurantCategoryProps) => {
+const RestaurantCategory = ({ data ,showItem , setShowItem}: restaurantCategoryProps) => {
 
   const clickHandle = ():void=>{
     setShowItem() ;
-
   }
 
-//   console.log(data);
   return (
     <div>
       {/**Header */}
@@ -29,7 +26,6 @@ const RestaurantCategory = ({ data ,showItem ,setShowItem}: restaurantCategoryPr
       {/**this says that if showItem is true then only show the Itemlist*/} 
       { showItem && <ItemList item ={data.itemCards} />}   
       </div>
-      {/*accordion body */}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestauranMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { ShimmerMenu } from "./Shimmer";
 
 const RestaurantMenu = () => {
   const { resId } = useParams<{ resId: string }>();
@@ -15,7 +16,7 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantMenu(resId);
 
-  if (resInfo === null) return <Shimmer />;
+  if (resInfo === null) return < ShimmerMenu />;
 
   const restaurantInfo = resInfo?.cards
     ?.map((c: any) => c?.card?.card?.info)
@@ -33,7 +34,7 @@ const RestaurantMenu = () => {
   // console.log(regularCards) ;
 
   const categories: [] = regularCards?.filter(
-    (c: any) =>
+    (c: any) => 
       c.card?.card?.["@type"] ==
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
   );
