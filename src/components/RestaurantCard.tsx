@@ -36,7 +36,7 @@ const ResCard = (props: ResCardProps) => {
         <h3 className="font-medium pt-2 text-lg  ">{name}</h3>
         <p className="px-1 text-sm">{cuisines.join(", ")}</p>
 
-        <div className="flex justify-between text-xs flex-wrap ">
+        <div className="flex justify-between text-xs flex-wrap mt-4">
         <h5 className="p-2 ">{avgRating}⭐ stars</h5>
         <h4 className="p-2">{costForTwo}</h4>
         <p className="p-2">{resData.info.sla.slaString}</p>

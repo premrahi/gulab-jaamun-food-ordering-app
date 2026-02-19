@@ -117,3 +117,14 @@ then componentDidMount()
 2. .consumer method  (for class based component) eg - in userClass file
 
 - to edit context all over the project we use .provider method in main file. eg- index.tsx file
+
+
+# time to learn REDUX
+![alt text](image.png)
+
+- install redux toolkit (@reduxjs/toolkit) , react-redux
+- build our store
+- connect our store to app
+- slice (cartSlice)
+- dispatch (Action)
+- Selector 

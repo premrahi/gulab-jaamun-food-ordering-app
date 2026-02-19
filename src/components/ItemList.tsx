@@ -1,11 +1,25 @@
+import { addItem } from "../utils/cartSlice";
+import { removeItem } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/constants";
+import { useDispatch } from "react-redux"; 
 
 interface ItemListProps {
   item: any;
 }
 
 const ItemList = ({ item }: ItemListProps) => {
-  console.log(item);
+  // console.log(item)
+  const dispatch:any = useDispatch() ;
+  const handleAdd = (item:any) =>{
+    dispatch(addItem(item))
+    // console.log(item);
+  }
+
+  const handleRemove = (item:any) =>{
+    dispatch(removeItem(item))
+  }
+
+
   return (
     <div>
       {item.map((i: any) => {
@@ -20,8 +34,11 @@ const ItemList = ({ item }: ItemListProps) => {
                   alt="food image"
                   className="absolute w-26 rounded-xl right-2 h-auto "
                 />
-                <button className="absolute bg-green-800 text-white p-2 m-2 rounded-xl top-3/3 right-2 hover:cursor-pointer hover:bg-black   ">
-                  ADD
+                <button className="absolute bg-green-800 text-white p-1 rounded-xl top-3/3 right-19 hover:cursor-pointer hover:bg-black" onClick={ () => handleAdd(i)}>
+                  Add+
+                </button>
+                <button className="absolute bg-green-800 text-white p-1  rounded-xl top-3/3 right-0  hover:cursor-pointer hover:bg-black" onClick={ () => handleRemove(i)}>
+                  Remove-
                 </button>
               <span>
                 {i.card?.info?.itemAttribute?.vegClassifier === "VEG"
