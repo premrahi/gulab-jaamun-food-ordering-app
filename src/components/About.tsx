@@ -1,21 +1,6 @@
-import User from "./User";
+// import User from "./User";
 import UserClass from "./UserClass";
 import React from "react";
-
-// const About = () => {   <----- function based component
-//   return (
-//     <>
-//       <div>
-//         <h1>About us page</h1>
-//         <p>this is namaste react web series</p>
-//       </div>
-//       <User name={"Prem rahi (function component)"}/>
-
-//       <br></br>
-//       <UserClass name={"Prem rahi (classbased component)"} location={"paxstan"} />
-//     </>
-//   );
-// };
 
 interface AboutProps {} ;
 interface AboutState {} ;
@@ -35,14 +20,13 @@ class About extends React.Component <AboutProps ,AboutState>{
 
     return (
       <>
-        <div className="font-bold text-center m-4 p-4">
+        {/* <div className="font-bold text-center m-4 p-4">
           <h1>About us page</h1>
           <p>this is namaste react web series</p>
         </div>
-        <User name={"Prem rahi (function component)"} />
-
+        <User name={"Prem rahi (function component)"} /> */}
         <br></br>
-        <UserClass
+        <UserClass 
           name={"Prem rahi (classbased component)"}
           location={"paxstan"}
         />

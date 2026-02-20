@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
-import logo2 from "url:../assets/logo2.png";
+import newLogo from "url:../assets/newLogo.png";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <div className="flex justify-between shadow-lg bg-white h-22 ">
       <div className="ml-14 justify-center">
-        <img className="w-44 ml-6 mt-2.5" src={logo2} alt="Logo" />
+       <Link to="/"><img className="w-54 ml-6 mt-0.5" src={newLogo} alt="Logo" /></Link>
       </div>
 
       <div>
@@ -30,7 +30,7 @@ const Header = () => {
             <Link to="/">Home</Link>
           </li>
           <li className="px-2 w-28  font-medium text-center hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-            <Link to="/about">About Us</Link>
+            <Link to="/about">Profile</Link>
           </li>
           {/* <li className="px2 w-28 text-center  font-medium hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
             <Link to="/contact">Contact Us</Link>
