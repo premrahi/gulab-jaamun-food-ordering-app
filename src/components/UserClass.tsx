@@ -64,7 +64,7 @@ class UserClass extends React.Component<UserProps, UserState> {
           <a href="https://github.com/premrahi">
             <img src={github} alt="github" className="w-10 m-4 p-1 bg-gray-100 rounded-full"/>
           </a>
-          <a href="https://www.linkedin.com/in/prem-rahi-237318253/" className="w-10 m-4 bg-gray-100 rounded-2xl">
+          <a href="https://www.linkedin.com/in/prem-rahi-237318253/" className="w-10 m-4 p-2 bg-gray-100 rounded-2xl">
             <img src={linkedin} alt="linkedin" />
           </a>
           <a href="https://discord.com/users/1062754999555334304" className="w-10 m-4 p-1  bg-gray-100 rounded-full">

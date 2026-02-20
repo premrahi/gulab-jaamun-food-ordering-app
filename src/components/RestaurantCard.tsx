@@ -24,7 +24,7 @@ const ResCard = (props: ResCardProps) => {
     resData?.info;
 
   return (
-    <div className="w-86 h-80 m-4 p-4 bg-gray-100 rounded-xl hover:bg-gray-300 shadow-md">
+    <div className="w-86 h-80 m-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-300 shadow-md">
       <div>
         <img
           className="rounded-xl w-full h-40 object-cover shadow-lg"
@@ -33,7 +33,7 @@ const ResCard = (props: ResCardProps) => {
         />
       </div>
       <div className="w-full ">
-        <h3 className="font-medium pt-2 text-lg  ">{name}</h3>
+        <h3 className="font-bold pt-2 text-lg  ">{name}</h3>
         <p className="px-1 text-sm">{cuisines.join(", ")}</p>
 
         <div className="flex justify-between text-xs flex-wrap mt-4">
