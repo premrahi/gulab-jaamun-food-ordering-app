@@ -1,5 +1,12 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 
+interface cartItem{
+    id:number ,
+    name : string ,
+    price : number ,
+    quantity : number ,
+}
+
 const cartSlice = createSlice({
     name:"cart" ,
     initialState:{

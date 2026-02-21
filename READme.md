@@ -128,3 +128,20 @@ then componentDidMount()
 - slice (cartSlice)
 - dispatch (Action)
 - Selector 
+
+
+# type of testing (developer)
+- unit testing
+- integration testing
+- end to end testing - e2e testing
+
+- react testing library uses jest
+
+commands
+1. testing library -> npm i -D @testing-library/react
+2. jest -> npm i -D jest
+3. installed babel dependencies
+4. configure babel
+5. configure parcel config file to disable babel transpilation in parcel
+6. jest configuration -> npx create-jest
+7. install jsdom lib -> npm i -D jest-environment-jsdom
