@@ -48,9 +48,16 @@ const Header = () => {
               Profile
             </NavLink>
           </li>
-          {/* <li className="px2 w-28 text-center  font-medium hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-            <Link to="/contact">Contact Us</Link>
-          </li> */}
+          <li className="px2 w-28 text-center  font-medium hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "text-orange-600 font-bold " : "text-gray-700"
+              }
+            >
+              Contact Us
+            </NavLink>
+          </li>
           {/* <li className="px-2 w-40 text-center  font-medium hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
             <Link to="/Grocery">Grocery Store</Link>
           </li> */}

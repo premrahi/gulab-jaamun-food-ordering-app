@@ -145,3 +145,6 @@ commands
 5. configure parcel config file to disable babel transpilation in parcel
 6. jest configuration -> npx create-jest
 7. install jsdom lib -> npm i -D jest-environment-jsdom
+8. install @babel/preset-react - to make JSX/TSX work in test cases
+9. include @babel/preset-react inside my babel config
+10. add '@testing-library/jest-dom' by -> npm install --save-dev @testing-library/jest-dom
