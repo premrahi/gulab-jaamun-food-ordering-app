@@ -2,15 +2,16 @@ import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
-import newLogo from "url:../assets/newLogo.png";
-import user from "url:../assets/user.png";
+import newLogo from "../assets/newLogo.png";
+import user from "../assets/user.png";
 import { useSelector } from "react-redux";
+
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus: boolean = useOnlineStatus();
 
-  // const { loggedInUser } = useContext(UserContext);
+  const { loggedInUser } = useContext(UserContext);
 
   //Subscribing to the store using a selector
   const cartItems = useSelector((store: any) => store.cart.items);
@@ -72,24 +73,21 @@ const Header = () => {
                 ({cartItems.length})
               </span>
               Cart
-            </NavLink>
+            </NavLink>           
           </li>
-          <li>
-            <img
-              src={user}
-              alt="user"
-              className="w-10 p-2 bg-gray-100 rounded-2xl cursor-pointer"
-            />
-          </li>
-          {/* <button
-            className="px-6 font-bold border-2 py-4 rounded-lg bg-white hover:cursor-pointer"
+          <button
+            className=" font-bold border-2 p-3 ml-6 rounded-lg bg-white hover:cursor-pointer"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}
           >
             {btnName}
           </button>
-          <li className="px-4  font-bold">USER : {loggedInUser}</li> */}
+          <li className="px-4  font-bold flex m-2" ><img
+              src={user}
+              alt="user"
+              className="w-10 p-2 bg-gray-100 rounded-2xl cursor-pointer"
+            /> :{loggedInUser}</li>
         </ul>
       </div>
     </div>

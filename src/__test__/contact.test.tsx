@@ -1,51 +1,61 @@
-import {getByRole, render,screen} from "@testing-library/react" ;
-import '@testing-library/jest-dom';
+import { getByRole, render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import Contact from "../components/Contact";
 
-test("contact us page/component should be loaded" ,()=>{
 
-    render(<Contact/>) ;
+describe("contact us page test case" ,()=>{
 
-    const heading = screen.getByRole("heading") ;
+    // it and test works the same.
 
-    expect(heading).toBeInTheDocument();
+it("contact us page/component should be loaded", () => {
+  render(<Contact />);
 
-}) ;
+  // querying
+  const heading = screen.getByRole("heading");
 
-test("button should be loaded on the page" ,()=>{
+  //assertion
+  expect(heading).toBeInTheDocument();
+});
 
-    render(<Contact/>) ;
+it("button should be loaded on the page", () => {
+  render(<Contact />);
 
-    const button = screen.getByRole("button") ;
+  // querying
+  const button = screen.getByRole("button");
 
-    expect(button).toBeInTheDocument();
+  //assertion
+  expect(button).toBeInTheDocument();
+});
 
-}) ;
+test("button should be loaded on the page", () => {
+  render(<Contact />);
 
-test("button should be loaded on the page" ,()=>{
+  // querying
+  const button = screen.getByText("submit");
 
-    render(<Contact/>) ;
+  //assertion
+  expect(button).toBeInTheDocument();
+});
 
-    const button = screen.getByText("submit") ;
+test("placeholder should be present on the page", () => {
+  render(<Contact />);
 
-    expect(button).toBeInTheDocument();
+  // querying
+  const inputName = screen.getByPlaceholderText("name");
 
-}) ;
+  //assertion
+  expect(inputName).toBeInTheDocument();
+});
 
-test("placeholder should be present on the page" ,()=>{
+test("should load 2 input box on the contact component", () => {
+  render(<Contact />);
+  // querying
+  const input = screen.getAllByRole("textbox");
 
-    render(<Contact/>) ;
+  //   console.log(input);
 
-    const inputName = screen.getByPlaceholderText("name") ;
+  //assertion
+  expect(input.length).toBe(2);
+});
 
-    expect(inputName).toBeInTheDocument();
-
-}) ;
-
-test("should load 2 input box on the contact component",()=>{
-    render(<Contact/>)
-
-    const input = screen.getAllByRole("textbox") ;
-
-    // expect(input).toBeInTheDocument()
-})
+}); 

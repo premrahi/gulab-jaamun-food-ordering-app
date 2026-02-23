@@ -20,6 +20,8 @@ interface ResCardProps {
 const ResCard = (props: ResCardProps) => {
   const { resData } = props;
 
+  // console.log(resData) ;
+
   const { cloudinaryImageId, name, avgRating, cuisines, areaName, costForTwo } =
     resData?.info;
 
