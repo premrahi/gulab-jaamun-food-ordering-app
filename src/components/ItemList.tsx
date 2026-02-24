@@ -25,6 +25,7 @@ const ItemList = ({ item }: ItemListProps) => {
       {item.map((i: any) => {
         return (
           <div
+          data-testid="foodItems"
             key={i.card?.info.id}
             className="m-4 bg-gray-200 rounded-2xl p-6 text-left shadow-lg"
           >

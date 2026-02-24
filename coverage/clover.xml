@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1771845342344" clover="3.2.0">
-  <project timestamp="1771845342344" name="All files">
-    <metrics statements="42" coveredstatements="35" conditionals="12" coveredconditionals="6" methods="19" coveredmethods="12" elements="73" coveredelements="53" complexity="0" loc="42" ncloc="42" packages="2" files="9" classes="9"/>
+<coverage generated="1771940091558" clover="3.2.0">
+  <project timestamp="1771940091558" name="All files">
+    <metrics statements="128" coveredstatements="86" conditionals="40" coveredconditionals="15" methods="56" coveredmethods="28" elements="224" coveredelements="129" complexity="0" loc="128" ncloc="128" packages="2" files="17" classes="17"/>
     <package name="components">
-      <metrics statements="22" coveredstatements="20" conditionals="12" coveredconditionals="6" methods="12" coveredmethods="10"/>
+      <metrics statements="99" coveredstatements="70" conditionals="40" coveredconditionals="15" methods="46" coveredmethods="26"/>
+      <file name="Body.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\Body.tsx">
+        <metrics statements="30" coveredstatements="28" conditionals="10" coveredconditionals="6" methods="9" coveredmethods="9"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="31" count="8" type="stmt"/>
+        <line num="32" count="8" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="40" count="8" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="44" count="8" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="50" count="3" type="stmt"/>
+        <line num="53" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="56" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="57" count="3" type="stmt"/>
+        <line num="58" count="3" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="65" count="8" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="70" count="20" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="78" count="8" type="stmt"/>
+        <line num="80" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="86" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="107" count="1" type="stmt"/>
+        <line num="108" count="20" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="127" count="76" type="stmt"/>
+      </file>
+      <file name="Cart.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\Cart.tsx">
+        <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
       <file name="Contact.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\Contact.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -11,27 +54,82 @@
       </file>
       <file name="Header.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\Header.tsx">
         <metrics statements="11" coveredstatements="11" conditionals="12" coveredconditionals="6" methods="7" coveredmethods="7"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="17" count="7" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="36" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="46" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="56" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="69" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="36" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="46" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="56" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="69" count="5" type="cond" truecount="1" falsecount="1"/>
         <line num="81" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
+      <file name="ItemList.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\ItemList.tsx">
+        <metrics statements="10" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+      </file>
+      <file name="OfflinePage.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\OfflinePage.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
       <file name="RestaurantCard.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\RestaurantCard.tsx">
-        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="77" type="stmt"/>
+        <line num="26" count="77" type="stmt"/>
+        <line num="28" count="77" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="58" count="8" type="stmt"/>
+        <line num="59" count="76" type="stmt"/>
+      </file>
+      <file name="RestaurantCategory.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\RestaurantCategory.tsx">
+        <metrics statements="4" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="RestaurantMenu.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\RestaurantMenu.tsx">
+        <metrics statements="20" coveredstatements="5" conditionals="10" coveredconditionals="1" methods="10" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="Shimmer.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\Shimmer.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
       </file>
       <file name="sum.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\components\sum.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -40,41 +138,53 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="20" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+      <metrics statements="29" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="2"/>
       <file name="UserContext.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\utils\UserContext.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
       </file>
       <file name="appStore.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\utils\appStore.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
       </file>
       <file name="cartSlice.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\utils\cartSlice.tsx">
         <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
       </file>
       <file name="constants.ts" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\utils\constants.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
       </file>
       <file name="useOnlineStatus.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\utils\useOnlineStatus.tsx">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="13" type="stmt"/>
+        <line num="6" count="13" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+      </file>
+      <file name="useRestauranMenu.tsx" path="C:\Users\dell\Desktop\gulab jaamun food ordering app\src\utils\useRestauranMenu.tsx">
+        <metrics statements="9" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
       </file>
     </package>
   </project>

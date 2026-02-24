@@ -148,3 +148,8 @@ commands
 8. install @babel/preset-react - to make JSX/TSX work in test cases
 9. include @babel/preset-react inside my babel config
 10. add '@testing-library/jest-dom' by -> npm install --save-dev @testing-library/jest-dom
+
+we need to create a global.mock fun for fetch
+
+when ever we work with fetch or state function in testing 
+we need to wrap it in the act() fn. it comes from "react-dom/test-utils"

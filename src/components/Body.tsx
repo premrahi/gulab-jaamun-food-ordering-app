@@ -92,6 +92,7 @@ const Body = () => {
           className="p-4 border-1 border-gray-400  shadow-lg  bg-white rounded-4xl  text-center w-160"
           type="text"
           placeholder="what you want?"
+          data-testid="searchInput"
           value={searchText}
           onChange={(e) => {
             handleSearch(e.target.value);
@@ -101,6 +102,7 @@ const Body = () => {
 
         <button
           className="mx-24 p-4 w-70 mt-3 rounded-4xl text-white bg-amber-700 shadow-lg hover:cursor-pointer"
+          data-testid="filterBtn"
           onClick={() => {
             const newListOfRestaurants = listOfRestaurants.filter(
               (res) => res.info.avgRating >= 4.3,
