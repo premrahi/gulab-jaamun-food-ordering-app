@@ -2,8 +2,8 @@ import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
-import newLogo from "../assets/newLogo.png";
-import user from "../assets/user.png";
+import newLogo from "url:../assets/newLogo.png";
+import user from "url:../assets/user.png";
 import { useSelector } from "react-redux";
 
 
@@ -14,7 +14,7 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
 
   //Subscribing to the store using a selector
-  const cartItems = useSelector((store: any) => store.cart.items);
+  const cartItems = useSelector((store: any) => store.cart.cartItems);
 
   return (
     <div className="flex justify-between shadow-lg bg-white h-22 ">
@@ -76,7 +76,7 @@ const Header = () => {
             </NavLink>           
           </li>
           <button
-            className=" font-bold border-2 p-3 ml-6 rounded-lg bg-white hover:cursor-pointer"
+            className=" font-semibold shadow-lg px-3 py-1 bg-pink-300 ml-6 rounded-full hover:cursor-pointer"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}
@@ -87,7 +87,7 @@ const Header = () => {
               src={user}
               alt="user"
               className="w-10 p-2 bg-gray-100 rounded-2xl cursor-pointer"
-            /> :{loggedInUser}</li>
+            /> {/*loggedInUser*/}</li>
         </ul>
       </div>
     </div>

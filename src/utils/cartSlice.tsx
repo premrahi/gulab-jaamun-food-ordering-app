@@ -1,24 +1,18 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 
-interface cartItem{
-    id:number ,
-    name : string ,
-    price : number ,
-    quantity : number ,
-}
 
 const cartSlice = createSlice({
     name:"cart" ,
     initialState:{
-        items:[] ,
+        cartItems:[] ,
     },
     reducers:{
         // mutating the state here
         addItem:(state:any,action:PayloadAction<any>) =>{
-            state.items.push(action.payload) ;
+            state.cartItems.push(action.payload) ;
         },
         removeItem:(state:any ,action:PayloadAction<any>)=>{
-            state.items.pop() ;
+            state.cartItems.pop() ;
             // state.items =  state.items.filter( item => item !== action.payload)
         },
         clearCart:(state:any)=>{

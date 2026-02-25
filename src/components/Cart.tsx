@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { clearCart } from "../utils/cartSlice";
+import CartItems from "./CartItem" ;
 
 const Cart = () => {
-  const cartItems = useSelector((store: any) => store.cart.items);
+  const cartItems = useSelector((store: any) => store.cart.cartItems);
   const dispatch = useDispatch();
   const handleClearCart = () => {
     dispatch(clearCart());
@@ -22,7 +23,8 @@ const Cart = () => {
         {cartItems.length === 0 && <h1 className="font-medium text-lg p-6">Please enter Items to your cart!</h1>}
       </span>
       <div className="w-220 m-auto">
-        <ItemList item={cartItems} />
+        {/* <ItemList item={cartItems} /> */}
+        <CartItems item={cartItems} /> 
       </div>
     </div>
   );
