@@ -62,17 +62,27 @@ class UserClass extends React.Component<UserProps, UserState> {
 
         <div className="flex justify-center ">
           <a href="https://github.com/premrahi">
-            <img src={github} alt="github" className="w-10 m-4 p-1 bg-gray-100 rounded-full"/>
+            <img
+              src={github}
+              alt="github"
+              className="w-10 m-4 p-1 bg-gray-100 rounded-full"
+            />
           </a>
-          <a href="https://www.linkedin.com/in/prem-rahi-237318253/" className="w-10 m-4 p-2 bg-gray-100 rounded-2xl">
+          <a
+            href="https://www.linkedin.com/in/prem-rahi-237318253/"
+            className="w-10 m-4 p-2 bg-gray-100 rounded-2xl"
+          >
             <img src={linkedin} alt="linkedin" />
           </a>
-          <a href="https://discord.com/users/1062754999555334304" className="w-10 m-4 p-1  bg-gray-100 rounded-full">
+          <a
+            href="https://discord.com/users/1062754999555334304"
+            className="w-10 m-4 p-1  bg-gray-100 rounded-full"
+          >
             <img src={discord} alt="discord" />
           </a>
         </div>
 
-        <div className="font-medium shadow-md m-auto px-20 mt-6 rounded-2xl w-100 h-76  text-center items-center ">
+        <div className="font-medium shadow-md m-auto px-20 mt-6 rounded-2xl md:w-100 md:h-76  text-center items-center ">
           {/* ways to update state variable */}
           {/* <button
           className="mx-4 p-4 text-blue-950 bg-amber-200 rounded-2xl"
@@ -96,7 +106,7 @@ class UserClass extends React.Component<UserProps, UserState> {
           Decrease counter
         </button> */}
 
-          <div className="justify-center  text-center">
+          <div className="justify-center text-center">
             {avatar_url && (
               <img
                 src={avatar_url}

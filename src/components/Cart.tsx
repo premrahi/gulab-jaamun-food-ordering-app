@@ -10,6 +10,7 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
+  console.log(cartItems);
   return (
     <div className="text-center m-4 p-4 flex flex-col ">
       <h1 className="text-2xl font-bold ">Cart</h1>
@@ -22,9 +23,9 @@ const Cart = () => {
         </button>
         {cartItems.length === 0 && <h1 className="font-medium text-lg p-6">Please enter Items to your cart!</h1>}
       </span>
-      <div className="w-220 m-auto">
+      <div className="md:w-220 m-auto">
         {/* <ItemList item={cartItems} /> */}
-        <CartItems item={cartItems} /> 
+        <CartItems key={cartItems?.card?.info?.name} item={cartItems} /> 
       </div>
     </div>
   );

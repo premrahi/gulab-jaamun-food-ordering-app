@@ -28,25 +28,25 @@ const ResCard = (props: ResCardProps) => {
   return (
     <div
       data-testid="resCard"
-      className="w-86 h-80 m-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-300 shadow-md"
+      className="md:w-86 md:h-80 md:m-4 md:p-4 w-44 h-52 m-1 p-1 bg-gray-50 rounded-xl md:hover:bg-gray-300 shadow-md"
     >
       <div>
         <img
-          className="rounded-xl w-full h-40 object-cover shadow-lg"
+          className="rounded-xl w-full md:h-40 object-cover shadow-lg h-20"
           alt="res-logo"
           src={CDN_URL + cloudinaryImageId}
         />
       </div>
       <div className="w-full ">
-        <h3 className="font-bold pt-2 text-lg  ">{name}</h3>
-        <p className="px-1 text-sm">{cuisines.join(", ")}</p>
+        <h3 className="md:font-bold font-medium text-[13px] md:pt-2  md:text-lg">{name}</h3>
+        <p className="px-1 md:text-sm text-[10px]">{cuisines.join(", ")}</p>
 
-        <div className="flex justify-between text-xs flex-wrap mt-4">
-          <h5 className="p-2 ">{avgRating}⭐ stars</h5>
-          <h4 className="p-2">{costForTwo}</h4>
-          <p className="p-2">{resData.info.sla.slaString}</p>
+        <div className="flex justify-between text-xs md:flex-wrap md:flex-row flex-col md:mt-4">
+          <h5 className="md:p-2  ">{avgRating}⭐ stars</h5>
+          <h4 className="md:p-2">{costForTwo}</h4>
+          <p className="md:p-2">{resData.info.sla.slaString}</p>
         </div>
-      </div>
+      </div>  
     </div>
   );
 };
@@ -58,7 +58,7 @@ export const OpenOrNot = (ResCard: any) => {
   return (props: ResCardProps) => {
     return (
       <div className="overflow-hidden hover:scale-105 transition-transform duration-300">
-        <label className=" absolute mx-2 p-3 bg-gray-800 text-white rounded-xl ">
+        <label className=" absolute text-center md:p-3 p-1 mx-1 w-14 md:w-16 bg-gray-800 text-white rounded-xl ">
           Open
         </label>
         <ResCard {...props} />

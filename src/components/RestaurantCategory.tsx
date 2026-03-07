@@ -17,9 +17,9 @@ const RestaurantCategory = ({ data ,showItem , setShowItem}: restaurantCategoryP
   return (
     <div>
       {/**Header */}
-      <div className="w-6/12 bg-gray-100 mx-auto my-8 p-4 shadow-lg ">
-        <div className="flex justify-between cursor-pointer" onClick={clickHandle} >
-          <span className="mx-6 font-semibold text-lg">{data.title} ({data.itemCards.length})</span>
+      <div className="md:w-1/2 w-5/6 bg-gray-100 mx-auto my-8 p-4 shadow-lg ">
+        <div className="flex justify-between  cursor-pointer" onClick={clickHandle} >
+          <span className="md:mx-6 mx-2 font-semibold text-sm md:text-lg ">{data.title} ({data.itemCards.length})</span>
           <span className="mx-6 font-semibold text-lg hover:cursor-pointer"> ⬇️ </span>
         </div>
 

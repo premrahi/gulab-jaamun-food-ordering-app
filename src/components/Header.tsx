@@ -6,88 +6,105 @@ import newLogo from "url:../assets/newLogo.png";
 import user from "url:../assets/user.png";
 import { useSelector } from "react-redux";
 
-
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus: boolean = useOnlineStatus();
 
   const { loggedInUser } = useContext(UserContext);
 
-  //Subscribing to the store using a selector
   const cartItems = useSelector((store: any) => store.cart.cartItems);
 
   return (
-    <div className="flex justify-between shadow-lg bg-white h-22 ">
-      <div className="ml-14 justify-center">
+    <div className="flex flex-col md:flex-row md:h-20 h-2/6 items-center justify-between shadow-lg w-full bg-white px-4 py-3">
+      
+      {/* Logo */}
+      <div className="flex items-center -mt-6 md:mt-3">
         <NavLink to="/">
-          <img className="w-54 ml-6 mt-0.5" src={newLogo} alt="Logo" />
+          <img className="w-48 md:w-52" src={newLogo} alt="Logo" />
         </NavLink>
       </div>
 
-      <div className=" flex justify-between mr-20">
-        <ul className="flex m-4 justify-center items-center mx-auto">
-          <li className=" font-medium text-gray-500  p-2 px-3 rounded-full   bg-gray-100">
-            status:{onlineStatus ? "🟢" : "🔴"}
+      {/* Navigation */}
+      <div className="-mt-8 md:mt-0 ">
+        <ul className="flex items-center gap-3 md:gap-6 md:text-lg text-sm flex-wrap md:mr-5">
+
+          {/* Online Status */}
+          <li className="font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+            {onlineStatus ? "🟢" : "🔴"}
           </li>
-          <li className="pl-6 w-28  font-medium text-center hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+
+          {/* Home */}
+          <li className="font-medium  hover:scale-105 transition">
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? "text-orange-600 font-bold " : "text-gray-700"
+                isActive ? "text-orange-600 font-bold" : "text-gray-700"
               }
             >
               Home
             </NavLink>
           </li>
-          <li className="px-2 w-28  font-medium text-center hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+
+          {/* Profile */}
+          <li className="font-medium hover:scale-105 transition">
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive ? "text-orange-600 font-bold " : "text-gray-700"
+                isActive ? "text-orange-600 font-bold" : "text-gray-700"
               }
             >
               Profile
             </NavLink>
           </li>
-          <li className="px2 w-28 text-center  font-medium hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+
+          {/* Contact */}
+          <li className="font-medium hover:scale-105 transition">
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                isActive ? "text-orange-600 font-bold " : "text-gray-700"
+                isActive ? "text-orange-600 font-bold" : "text-gray-700"
               }
             >
               Contact Us
             </NavLink>
           </li>
-          {/* <li className="px-2 w-40 text-center  font-medium hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-            <Link to="/Grocery">Grocery Store</Link>
-          </li> */}
-          <li className="px-2 w-28 font-medium hover:cursor-pointer hover:text-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+
+          {/* Cart */}
+          <li className="font-medium hover:scale-105 transition">
             <NavLink
               to="/cart"
               className={({ isActive }) =>
-                isActive ? "text-orange-600 font-bold " : "text-gray-700"
+                isActive ? "text-orange-600 font-bold" : "text-gray-700"
               }
             >
-              <span className="bg-yellow-300 rounded-full p-1 m-1 ">
+              <span className="bg-yellow-300 rounded-full px-2 py-1 mr-1">
                 ({cartItems.length})
               </span>
               Cart
-            </NavLink>           
+            </NavLink>
           </li>
-          <button
-            className=" font-semibold shadow-lg px-3 py-1 bg-pink-300 ml-6 rounded-full hover:cursor-pointer"
-            onClick={() => {
-              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-            }}
+              
+          {/* Login Button */}
+          {/* <button
+            className="font-semibold shadow-md px-4 py-1 bg-pink-300 rounded-full hover:cursor-pointer"
+            onClick={() =>
+              btnName === "Login"
+                ? setBtnName("Logout")
+                : setBtnName("Login")
+            }
           >
             {btnName}
-          </button>
-          <li className="px-4  font-bold flex m-2" ><img
+          </button> */}
+
+          {/* User Icon */}
+          <li>
+            <img
               src={user}
               alt="user"
-              className="w-10 p-2 bg-gray-100 rounded-2xl cursor-pointer"
-            /> {/*loggedInUser*/}</li>
+              className="md:w-10 w-8 p-2 bg-gray-100 rounded-2xl cursor-pointer"
+            />
+          </li>
+
         </ul>
       </div>
     </div>

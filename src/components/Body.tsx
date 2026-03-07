@@ -83,13 +83,15 @@ const Body = () => {
 
   // console.log(listOfRestaurants)
 
+  // return <Shimmer /> ;
+
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
       <div className="flex flex-col p-4 mx-auto items-center">
         <input
-          className="p-4 border-1 border-gray-400  shadow-lg  bg-white rounded-4xl  text-center w-160"
+          className="p-4 border-1 border-gray-400 shadow-lg text-sm md:text-lg bg-white rounded-4xl  text-center w-80 md:w-160"
           type="text"
           placeholder="what you want?"
           data-testid="searchInput"
@@ -101,7 +103,7 @@ const Body = () => {
         
 
         <button
-          className="mx-24 p-4 w-70 mt-3 rounded-4xl text-white bg-amber-700 shadow-lg hover:cursor-pointer"
+          className="mx-24 p-4 md:w-70 w-44 mt-3 rounded-4xl text-sm md:text-lg text-white bg-amber-700 shadow-lg hover:cursor-pointer"
           data-testid="filterBtn"
           onClick={() => {
             const newListOfRestaurants = listOfRestaurants.filter(
