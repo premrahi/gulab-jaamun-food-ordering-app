@@ -43,33 +43,30 @@ const Body = () => {
 
   const fetchData = async (): Promise<void> => {
     try {
-      const data = await fetch(
-        "https://corsproxy.io/?" + encodeURIComponent(FOODFIRE_API),
-      );
+      const data = await fetch(FOODFIRE_API);
 
       const json = await data.json();
 
-      const restaurants: Restaurant[] =
-        json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || [];
+      const restaurants =
+        json?.data?.cards
+          ?.map(
+            (card: any) =>
+              card?.card?.card?.gridElements?.infoWithStyle?.restaurants,
+          )
+          ?.find((res: any) => res !== undefined) || [];
 
-      if (restaurants) {
-        setListOfRestaurants(restaurants);
-        setFilterRestaurant(restaurants);
-      }
+      setListOfRestaurants(restaurants);
+      setFilterRestaurant(restaurants);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-
   const handleSearch = (value: string) => {
     setSearchText(value);
 
     const filteredRestaurants = listOfRestaurants.filter((res) => {
       //to make it case insensitive we must convert both the text into lowercase
-      return res.info.name
-        .toLowerCase()
-        .includes(value.toLocaleLowerCase());
+      return res.info.name.toLowerCase().includes(value.toLocaleLowerCase());
     });
     // console.log(searchText);
     setFilterRestaurant(filteredRestaurants);
@@ -77,8 +74,8 @@ const Body = () => {
 
   const onlineStatus: boolean = useOnlineStatus();
 
-  if(onlineStatus === false) {
-    return <OfflinePage />
+  if (onlineStatus === false) {
+    return <OfflinePage />;
   }
 
   // console.log(listOfRestaurants)
@@ -100,7 +97,6 @@ const Body = () => {
             handleSearch(e.target.value);
           }}
         />
-        
 
         <button
           className="mx-24 p-4 md:w-70 w-44 mt-3 rounded-4xl text-sm md:text-lg text-white bg-amber-700 shadow-lg hover:cursor-pointer"
